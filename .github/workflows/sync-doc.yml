@@ -1,0 +1,45 @@
+# document sync workflow from skills-introduction-to-github to skills-introduction-to-github.wiki repo
+
+name: Sync documentation
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+  workflow_dispatch:
+
+jobs:
+    copydocs:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Git repository
+              uses: actions/checkout@v4
+              with: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Checkout skills intro to github repository
+              uses: actions/checkout@v4
+              with: 
+                path: skills-introduction-to-github
+                repository: skills/introduction-to-github
+                ref: main
+                token: ${{ secrets.GITHUB_TOKEN }}
+            - name: Copy documentation
+              shell: bash
+              run: |
+                cp -r docs/* skills-introduction-to-github.wiki/
+                
+            - name: Check for changes
+              id: check_changes
+              shell: bash
+              run:  |
+                git config --global user.name "github-actions"
+                git add docs/
+                (git diff --cached --exit-code ||(echo "hasChanges=true" >> "$GITHUB_OUTPUT")
+                              
+            - name: Commit and push changes
+              if: steps.check_changes.outputs.hasChanges == 'true'
+              shell: bash
+              run: |
+                git commit -m "Update documentation Again"
+                git push
