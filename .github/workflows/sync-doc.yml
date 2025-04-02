@@ -24,7 +24,7 @@ jobs:
               with: 
                 path: skills-introduction-to-github/wiki
                 repository: Naresh-Shekkari/skills-introduction-to-github.wiki.git
-                ref: main
+                ref: master
                 token: ${{ secrets.GITHUB_TOKEN }}
                 fetch-depth: 0
             - name: Copy documentation
