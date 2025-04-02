@@ -22,8 +22,8 @@ jobs:
             - name: Checkout skills intro to github repository
               uses: actions/checkout@v4
               with: 
-                path: skills-introduction-to-github
-                repository: Naresh-Shekkari/skills-introduction-to-github
+                path: skills-introduction-to-github/wiki
+                repository: Naresh-Shekkari/skills-introduction-to-github.wiki.git
                 ref: main
                 token: ${{ secrets.GITHUB_TOKEN }}
                 fetch-depth: 0
@@ -33,7 +33,7 @@ jobs:
                 # Copy the contents of the docs directory to the wiki repository
                 # Ensure the wiki directory exists
                 cp -r skills-introduction-to-github/docs/* skills-introduction-to-github.wiki/
-                
+
                 # If the wiki directory doesn't exist, create it
                 
             - name: Check for changes
