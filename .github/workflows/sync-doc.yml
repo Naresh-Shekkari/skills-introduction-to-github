@@ -32,7 +32,7 @@ jobs:
               run: |
                 # Copy the contents of the docs directory to the wiki repository
                 # Ensure the wiki directory exists
-                cp -r skills-introduction-to-github/skills-introduction-to-github/docs/* skills-introduction-to-github.wiki/
+                cp -r Naresh-Shekkari/skills-introduction-to-github/docs/* skills-introduction-to-github.wiki/
 
                 # If the wiki directory doesn't exist, create it
                 
