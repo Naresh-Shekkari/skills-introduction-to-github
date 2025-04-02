@@ -22,7 +22,7 @@ jobs:
             - name: Checkout skills intro to github repository
               uses: actions/checkout@v4
               with: 
-                path: skills-introduction-to-github/wiki
+                path: skills-introduction-to-github.wiki
                 repository: Naresh-Shekkari/skills-introduction-to-github.wiki.git
                 ref: master
                 token: ${{ secrets.GITHUB_TOKEN }}
