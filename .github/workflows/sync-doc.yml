@@ -15,7 +15,9 @@ jobs:
         steps:
             - name: Checkout Git repository
               uses: actions/checkout@v4
-              with: ${{ secrets.GITHUB_TOKEN }}
+              with: 
+                token: ${{ secrets.GITHUB_TOKEN }}
+                fetch-depth: 0
 
             - name: Checkout skills intro to github repository
               uses: actions/checkout@v4
@@ -24,6 +26,7 @@ jobs:
                 repository: skills/introduction-to-github
                 ref: main
                 token: ${{ secrets.GITHUB_TOKEN }}
+                fetch-depth: 0
             - name: Copy documentation
               shell: bash
               run: |
