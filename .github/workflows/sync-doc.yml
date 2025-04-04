@@ -27,26 +27,3 @@ jobs:
                 ref: master
                 token: ${{ secrets.GITHUB_TOKEN }}
                 fetch-depth: 0
-            - name: Copy documentation
-              shell: bash
-              run: |
-                # Copy the contents of the docs directory to the wiki repository
-                # Ensure the wiki directory exists
-                cp -r skills-introduction-to-github/skills-introduction-to-github/docs/* skills-introduction-to-github.wiki/
-
-                # If the wiki directory doesn't exist, create it
-                
-            - name: Check for changes
-              id: check_changes
-              shell: bash
-              run:  |
-                git config --global user.name "github-actions"
-                git add docs/
-                (git diff --cached --exit-code ||(echo "hasChanges=true" >> "$GITHUB_OUTPUT")
-                              
-            - name: Commit and push changes
-              if: steps.check_changes.outputs.hasChanges == 'true'
-              shell: bash
-              run: |
-                git commit -m "Update documentation Again"
-                git push
