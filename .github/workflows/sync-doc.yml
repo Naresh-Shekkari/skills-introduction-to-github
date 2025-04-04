@@ -28,8 +28,7 @@ jobs:
                 token: ${{ secrets.GITHUB_TOKEN }}
                 fetch-depth: 0
 
-            - name: display the files in the repo
+            - name: list of files
               run: |
-                echo "Files in the skills-introduction-to-github repo:"
-                cd skills-introduction-to-github
+                echo "Files in the current directory:"
                 ls -R
