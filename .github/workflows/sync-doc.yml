@@ -27,3 +27,9 @@ jobs:
                 ref: master
                 token: ${{ secrets.GITHUB_TOKEN }}
                 fetch-depth: 0
+
+            - name: display the files in the repo
+              run: |
+                echo "Files in the skills-introduction-to-github repo:"
+                cd skills-introduction-to-github
+                ls -R
