@@ -49,8 +49,11 @@ jobs:
               git branch -a
               git log -n 1
               git show --stat
-              
-
-
-
-
+          - name: Copy documentation
+            run: |
+              echo "Copying documentation..."
+              cp -r docs/* wiki/
+              cd wiki
+              echo "Files in the current directory:"
+              ls -R
+              echo "Copying was successful"
