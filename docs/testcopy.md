@@ -19,6 +19,9 @@ Testing activities are essential to ensure the quality and reliability of softwa
 5. **Regression Testing**  
     Verifies that new changes have not adversely affected existing functionality.
 
+6. **Regression Testing**  
+    Verifies that new changes have not adversely affected existing functionality.
+
 ## Common Testing Tools
 - Selenium
 - JUnit
