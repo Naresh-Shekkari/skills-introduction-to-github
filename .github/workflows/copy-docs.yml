@@ -30,3 +30,14 @@ jobs:
               git branch -a
               git log -n 1
               git show --stat
+          - name: Clone wiki repository
+            env:
+              WIKI_REPO: ${{ secrets.WIKI_REPO }}
+              WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+            run: |
+              git clone https://github.com/Naresh-Shekkari/skills-introduction-to-github.wiki.git wiki
+              cd wiki
+              git config user.name "github-actions"
+              
+
+
