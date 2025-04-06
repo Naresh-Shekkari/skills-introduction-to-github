@@ -60,6 +60,6 @@ jobs:
           - name: Commit and push changes
             run: |
               echo "Committing and pushing changes..."
-              cd wiki
+              
               echo "Present Working Directory"
               pwd
