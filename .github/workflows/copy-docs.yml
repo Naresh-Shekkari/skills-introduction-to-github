@@ -22,6 +22,8 @@ jobs:
               run: |
                 echo "Files in the current directory:"
                 ls -R
+                echo "present working directory:"
+                pwd
                 echo "Git info:"
                 git config --list
                 git status
