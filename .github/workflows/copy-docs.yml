@@ -73,5 +73,5 @@ jobs:
 
               git add .
               git commit -m "Update documentation"
-              git push https://x-access-token:${GITHUB_TOKEN}@github.com/Naresh-Shekkari/skills-introduction-to-github.git HEAD:main
+              git push https://x-access-token:${GITHUB_TOKEN}@github.com/Naresh-Shekkari/skills-introduction-to-github.wiki.git HEAD:main
               echo "Push was successful"
