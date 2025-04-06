@@ -60,6 +60,12 @@ jobs:
           - name: Commit and push changes
             run: |
               echo "Committing and pushing changes..."
-              
+              cd wiki
+              echo "Files in the current directory:"
+              ls -R
               echo "Present Working Directory"
               pwd
+              git add .
+              git commit -m "Update documentation"
+              git push 
+              
