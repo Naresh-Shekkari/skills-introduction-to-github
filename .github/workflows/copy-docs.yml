@@ -58,6 +58,8 @@ jobs:
               ls -R
               echo "Copying was successful"
           - name: Commit and push changes
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             run: |
               echo "Committing and pushing changes..."
               cd wiki
@@ -71,7 +73,7 @@ jobs:
 
               git add .
               git commit -m "Update documentation"
-              git push origin HEAD:main
+              git push https://x-access-token:${GITHUB_TOKEN}@github.com/Naresh-Shekkari/skills-introduction-to-github.wiki.git HEAD:main
               echo "Push was successful"
             
               
