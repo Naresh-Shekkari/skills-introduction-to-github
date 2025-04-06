@@ -57,3 +57,9 @@ jobs:
               echo "Files in the current directory:"
               ls -R
               echo "Copying was successful"
+          - name: Commit and push changes
+            run: |
+              echo "Committing and pushing changes..."
+              cd wiki
+              echo "Present Working Directory"
+              pwd
