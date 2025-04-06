@@ -1,0 +1,21 @@
+# copy docs from skills-introduction-to-github to skills-introduction-to-github.wiki repo   
+name: Copy documentation
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+  workflow_dispatch:
+
+jobs:
+    copy-docs:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Git repository
+              uses: actions/checkout@v4
+              with: 
+                token: ${{ secrets.GITHUB_TOKEN }}
+                fetch-depth: 0
+        
