@@ -65,6 +65,8 @@ jobs:
               ls -R
               echo "Present Working Directory"
               pwd
+              git config user.name "github-actions"
+              
               git add .
               git commit -m "Update documentation"
               git push 
