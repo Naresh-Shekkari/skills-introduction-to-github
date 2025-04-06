@@ -37,6 +37,8 @@ jobs:
             run: |
               git clone https://github.com/Naresh-Shekkari/skills-introduction-to-github.wiki.git wiki
               cd wiki
+              echo "Files in the current directory:"
+              ls -R
               git config user.name "github-actions"
               echo "Present Working Directory"
               pwd
@@ -47,6 +49,7 @@ jobs:
               git branch -a
               git log -n 1
               git show --stat
+              
 
 
 
