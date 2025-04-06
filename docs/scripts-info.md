@@ -25,3 +25,6 @@
 
 8. **Maintain and Update**  
     Regularly review and update the script to adapt to changing requirements.
+
+9. **Maintain and Update**  
+    Regularly review and update the script to adapt to changing requirements.
