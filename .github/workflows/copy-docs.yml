@@ -13,14 +13,10 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            
-            - name: Checkout Git Wiki repo
+            - name: Checkout Git repository
               uses: actions/checkout@v4
-              
-              with:
-                repository: Naresh-Shekkari/skills-introduction-to-github.wiki.git
+              with: 
                 token: ${{ secrets.GITHUB_TOKEN }}
-                path: skills-introduction-to-github.wiki
                 fetch-depth: 0
             - name: debug files and git info
               run: |
@@ -35,5 +31,11 @@ jobs:
                 git branch -a
                 git log -n 1
                 git show --stat
-
+            - name: Checkout Git Wiki repo
+              uses: actions/checkout@v4
+              with:
+                repository: Naresh-Shekkari/skills-introduction-to-github.wiki.git
+                token: ${{ secrets.GITHUB_TOKEN }}
+                path: skills-introduction-to-github.wiki
+                fetch-depth: 0
                 
