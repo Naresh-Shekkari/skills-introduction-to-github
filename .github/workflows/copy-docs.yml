@@ -10,7 +10,7 @@ on:
 
 jobs:
     copy-docs:
-        runs-on: My-NewRunner
+        runs-on: My-Test-Runner1
 
         steps:
           - name: Checkout Git repository
